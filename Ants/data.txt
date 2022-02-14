@@ -1,0 +1,16 @@
+# A single-minded ant
+. NNNN ....
+100
+
+# Langton's Ant
+w ESWN bbbb
+b WNES wwww
+100000
+
+# ?????
+. EEEE xxxx
+y SEWN x.!y
+# Ignore me!
+x WEEE !!!!
+! NWES .yx!
+12
