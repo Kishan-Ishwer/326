@@ -1,0 +1,82 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import java.util.*;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Toothpicks extends JPanel {
+
+    ArrayList<ArrayList<Line>> lines = new ArrayList<ArrayList<Line>>();
+    static int generation = 0;
+    static float size = 1;
+
+    public void drawToothPicks(int gen, float s, Graphics g, int x1, int x2, int y1, int y2){
+        if (gen == 0) {
+            g.drawLine(10,10,20,10);
+        }
+        else if (gen % 2 == 1) {
+            System.out.println("gen = " + gen);
+            g.drawLine(10,10,50,30);
+
+            drawToothPicks(gen-1, s, g, 10, 10, 10, 10);
+
+        }
+        else {
+
+            System.out.println("gen = " + gen);
+            g.drawLine(10,10,50,30);
+
+            drawToothPicks(gen-1, s, g, 10, 10, 10, 10);
+
+        }
+    }
+
+    public void drawGenerationY(int gen, float s, Graphics g, int x1, int x2, int y1, int y2) {
+
+    }
+
+    public void drawGenerationX(int gen, float s, Graphics g, int x1, int x2, int y1, int y2) {
+
+    } 
+
+    @Override
+    public void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(Color.BLACK);
+        drawToothPicks(generation, size, g, 10, 10 , 20 , 10);
+        
+    }
+
+    public static void main(String[] args) {
+        
+
+        if (args.length == 1) {
+            generation = Integer.parseInt(args[0]);
+        } else if (args.length == 2) {
+            generation = Integer.parseInt(args[0]);
+            size = Float.parseFloat(args[1]);
+        }
+
+        
+        System.out.println(size);
+        
+        
+
+
+        JFrame frame = new JFrame();
+        frame.setSize(400, 420);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Toothpicks game = new Toothpicks();
+        frame.setContentPane(game);
+
+        frame.setVisible(true);
+        frame.invalidate();
+    }
+}
+
+
