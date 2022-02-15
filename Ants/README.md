@@ -6,18 +6,29 @@ A variation on langstons ant where squares can be more than just black or white,
 
 Input Structure:
 
+
 |# Ant Name
+
 |# Rules
+
 |# Steps
+
 
 Examples:
 
+
 |# ?????
+
 |. EEEE xxxx
+
 |y SEWN x.!y
+
 |# Ignore me!
+
 |x WEEE !!!!
+
 |! NWES .yx!
+
 |12
 
 The first value in each rule is the colour/symbol of the tile the ant is currently on
